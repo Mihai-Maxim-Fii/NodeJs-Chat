@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="data:,">
+<title>
+    Chat
+</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <h1>Wellcome to the chat!</h1>
+    <div  class="Textarea" >
+     <div class="Text">
+         
+         <% 
+         for(var i=0; i < lungime ;i++)
+         {
+          %>
+          <p><%=Messages[i].msg%></p>
+          <%
+         }
+         %>
+    
+     
+</div>
+    </div>
+   
+    <%
+    if(typeof User !== 'undefined'){
+     %>
+    <form method="POST"  >
+        <p id="numhidden" style="display: none;"><%=Nr %></p>
+        <p id="hidden" style="display:none;" ><%=User %></p>
+        <p id="number" style="display: none;"><%=lungime %></p>
+        <p id="userName">You are:<%=User %></p>
+        <input type="text" id="inputText" maxlength="100" required> 
+        <input type="button" value="Send" id="inputButton">
+    </form>
+    <%}
+    else
+    {
+      %>
+      <div id="chatLogin">
+      <form method="POST" >
+          <label for="usernameInput">Enter username:</label>
+          <input type="text" name="usernameInput" id="userInput"  maxlength="20" required>
+          <button  id="joinChat">Join chat</button>
+      </form> 
+   
+    </div>
+      <%
+    
+    }
+    %>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+</body>
+</html>
